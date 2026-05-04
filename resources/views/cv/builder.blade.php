@@ -273,15 +273,9 @@
                             </div>
                             <input type="hidden" name="content[personal][photo]" id="in-photo">
 
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <div class="form-group">
-                                    <label>Nama Lengkap <span style="color:red">*</span></label>
-                                    <input type="text" name="content[personal][full_name]" id="in-name" class="form-control" placeholder="Nama Lengkap Anda" required oninput="updatePreview()">
-                                </div>
-                                <div class="form-group">
-                                    <label>Posisi/Jabatan yang Dilamar</label>
-                                    <input type="text" name="content[personal][title]" id="in-title" class="form-control" placeholder="e.g. Software Engineer" oninput="updatePreview()">
-                                </div>
+                            <div class="form-group">
+                                <label>Nama Lengkap <span style="color:red">*</span></label>
+                                <input type="text" name="content[personal][full_name]" id="in-name" class="form-control" placeholder="Contoh: Aditya Pratama Putra" required oninput="updatePreview()">
                             </div>
 
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -419,7 +413,6 @@
                             <img id="p-photo-preview" src="" alt="" style="width:65px;height:65px;object-fit:cover;border-radius:3px;display:none;flex-shrink:0;">
                             <div style="flex:1;">
                                 <h1 id="p-name" style="text-align:left;font-size:14pt;">NAMA LENGKAP ANDA</h1>
-                                <div id="p-title-row" style="font-style:italic;font-size:9pt;color:#333;display:none;margin-bottom:2px;"><span id="p-title"></span></div>
                                 <div class="cv-contact" style="display:flex;justify-content:flex-start;gap:4px;font-size:7.5pt;flex-wrap:wrap;">
                                     <span id="p-address">Kota, Indonesia</span>
                                     <span id="p-phone-row" style="display:none;"> | <span id="p-phone"></span></span>
@@ -664,7 +657,6 @@
         
         // Personal
         const name = document.getElementById('in-name').value;
-        const title = document.getElementById('in-title').value;
         const phone = document.getElementById('in-phone').value;
         const email = document.getElementById('in-email').value;
         const linkedin = document.getElementById('in-linkedin').value;
@@ -673,8 +665,6 @@
         const summary = document.getElementById('in-summary').value;
 
         document.getElementById('p-name').textContent = name || 'NAMA LENGKAP ANDA';
-        document.getElementById('p-title').textContent = title;
-        document.getElementById('p-title-row').style.display = title ? 'block' : 'none';
         document.getElementById('p-address').textContent = address || 'Kota, Indonesia';
         document.getElementById('p-summary').textContent = summary;
         document.getElementById('p-summary-section').style.display = summary ? 'block' : 'none';

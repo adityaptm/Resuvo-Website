@@ -150,9 +150,6 @@
                 @endif
                 <div style="flex:1;text-align:left;">
                     <h1 style="font-size:16pt;text-transform:uppercase;font-weight:bold;margin-bottom:2px;">{{ $cv->content['personal']['full_name'] ?? 'NAMA LENGKAP ANDA' }}</h1>
-                    @if(!empty($cv->content['personal']['title']))
-                    <div style="font-style:italic;color:#333;margin-bottom:4px;font-size:10pt;">{{ $cv->content['personal']['title'] }}</div>
-                    @endif
                     <div class="cv-contact" style="justify-content:flex-start;flex-wrap:wrap;gap:5px;font-size:9pt;">
                         <span>{{ $cv->content['personal']['address'] ?? '' }}</span>
                         @if(!empty($cv->content['personal']['phone'])) <span> | {{ $cv->content['personal']['phone'] }}</span> @endif

@@ -54,6 +54,20 @@ Resuvo is a modern, web-based CV builder application built with **Laravel**. It 
    php artisan serve
    ```
 
+## 🚀 Deployment (Vercel)
+
+Aplikasi ini sudah dikonfigurasi untuk dideploy ke **Vercel** menggunakan runtime PHP.
+
+### Langkah-langkah:
+1. **Hubungkan GitHub**: Sambungkan repositori GitHub Anda ke Vercel.
+2. **Environment Variables**: Tambahkan variabel berikut di Vercel Dashboard:
+   - `APP_KEY`: Jalankan `php artisan key:generate --show` secara lokal untuk mendapatkan key.
+   - `APP_ENV`: `production`
+   - `APP_DEBUG`: `false`
+   - `DB_CONNECTION`: `sqlite`
+   - `DB_DATABASE`: `/tmp/database.sqlite` (Direktori writable di Vercel)
+3. **Build Settings**: Biarkan default, Vercel akan mendeteksi `vercel.json`.
+
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
