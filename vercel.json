@@ -1,8 +1,12 @@
 {
     "version": 2,
     "framework": null,
-    "outputDirectory": "public",
+    "buildCommand": "npm run build",
     "builds": [
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        },
         {
             "src": "api/index.php",
             "use": "vercel-php@0.7.3"
@@ -10,7 +14,20 @@
     ],
     "routes": [
         {
-            "handle": "filesystem"
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/css/(.*)",
+            "dest": "/public/css/$1"
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "/public/js/$1"
+        },
+        {
+            "src": "/img/(.*)",
+            "dest": "/public/img/$1"
         },
         {
             "src": "/(.*)",
