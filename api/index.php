@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 
+// Memaksa Laravel mengenali bahwa request ini dari HTTPS (karena Vercel menggunakan HTTPS)
+$_SERVER['HTTPS'] = 'on';
+
 define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
