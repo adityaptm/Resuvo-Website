@@ -39,8 +39,11 @@
         }
     ],
     "env": {
+        "APP_NAME": "Resuvo",
         "APP_ENV": "production",
+        "APP_KEY": "base64:kyWOJa9DXUJi5kgpjLdcbPltq19yKfykdM3jsIh2Of4=",
         "APP_DEBUG": "false",
+        "APP_URL": "https://resuvo-website.vercel.app",
         "LOG_CHANNEL": "stderr",
         "DB_CONNECTION": "sqlite",
         "DB_DATABASE": "/tmp/database.sqlite",
